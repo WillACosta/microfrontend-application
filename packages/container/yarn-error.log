@@ -1,0 +1,54 @@
+Arguments: 
+  /Users/will/.nvm/versions/node/v16.16.0/bin/node /Users/will/.node/corepack/yarn/1.22.15/bin/yarn.js
+
+PATH: 
+  /Users/will/.stk/bin:/Users/will/.nvm/versions/node/v16.16.0/bin:/opt/homebrew/lib/ruby/gems/3.0.0/bin/pod:/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/2.7/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/will/Library/Application Support/JetBrains/Toolbox/scripts:/Users/will/.pub-cache/bin:/Users/will/workspace/Library/sonar-scanner/bin:/Users/will/workspace/Library/Android/SDK/emulator:/Users/will/workspace/Library/Android/SDK/tools:/Users/will/workspace/Library/Android/SDK/tools/bin:/Users/will/workspace/Library/Android/SDK/platform-tools:/usr/local/opt/node@14/bin:/Users/will/fvm/default/bin
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  16.16.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOTEMPTY: directory not empty, rmdir '/Users/will/Library/Caches/Yarn/v6/npm-@material-ui-icons-4.11.3-b0693709f9b161ce9ccde276a770d968484ecff1-integrity/node_modules/@material-ui/icons'
+
+npm manifest: 
+  {
+    "name": "container",
+    "version": "1.0.0",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+      "@material-ui/core": "^4.11.0",
+      "@material-ui/icons": "^4.9.1",
+      "react": "^17.0.1",
+      "react-dom": "^17.0.1",
+      "react-router-dom": "^5.2.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.12.3",
+      "@babel/plugin-transform-runtime": "^7.12.1",
+      "@babel/preset-env": "^7.12.1",
+      "@babel/preset-react": "^7.12.1",
+      "babel-loader": "^8.1.0",
+      "clean-webpack-plugin": "^3.0.0",
+      "css-loader": "^5.0.0",
+      "html-webpack-plugin": "^4.5.0",
+      "style-loader": "^2.0.0",
+      "webpack": "^5.4.0",
+      "webpack-cli": "^4.1.0",
+      "webpack-dev-server": "^3.11.0",
+      "webpack-merge": "^5.2.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
