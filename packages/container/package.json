@@ -2,7 +2,8 @@
   "name": "container",
   "version": "1.0.0",
   "scripts": {
-    "dev": "webpack serve -c config/webpack.dev.js"
+    "dev": "webpack serve -c config/webpack.dev.js",
+    "build": "webpack -c config/webpack.prod.js"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
