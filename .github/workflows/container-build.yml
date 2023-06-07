@@ -28,6 +28,8 @@ jobs:
 
       - name: Build Prod Bundle
         run: yarn build
+        env:
+          PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
 
   deploy:
     name: Deploy App to AWS S3
@@ -46,6 +48,8 @@ jobs:
 
       - name: Build Prod Bundle
         run: yarn build
+        env:
+          PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
 
       - name: Install AWS CLI
         uses: shinyinc/action-aws-cli@v1.2

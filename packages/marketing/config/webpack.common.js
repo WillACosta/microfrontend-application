@@ -1,5 +1,3 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-
 module.exports = {
   module: {
     rules: [
@@ -16,14 +14,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new ModuleFederationPlugin({
-      name: "containerApp",
-      filename: "remoteEntry.js",
-      remotes: {
-        marketing: "marketingApp@http://localhost:8081/remoteEntry.js",
-      },
-      shared: packageJson.dependencies,
-    }),
-  ],
 }

@@ -20,16 +20,11 @@ jobs:
       - name: Get Repository
         uses: actions/checkout@v2
 
-      - name: Install Yarn
-        run: npm i -g yarn
-
       - name: Install Dependencies
-        run: yarn install
+        run: npm install
 
       - name: Build Prod Bundle
-        run: yarn build
-        env:
-          PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
+        run: npm run build
 
   deploy:
     name: Deploy App to AWS S3
@@ -40,16 +35,11 @@ jobs:
       - name: Get Repository
         uses: actions/checkout@v2
 
-      - name: Install Yarn
-        run: npm i -g yarn
-
       - name: Install Dependencies
-        run: yarn install
+        run: npm install
 
       - name: Build Prod Bundle
-        run: yarn build
-        env:
-          PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
+        run: npm run build
 
       - name: Install AWS CLI
         uses: shinyinc/action-aws-cli@v1.2
