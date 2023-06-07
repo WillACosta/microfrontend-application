@@ -35,6 +35,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Get Repository
+        uses: actions/checkout@v2
+
+      - name: Install Yarn
+        run: npm i -g yarn
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build Prod Bundle
+        run: yarn build
+
       - name: Install AWS CLI
         uses: shinyinc/action-aws-cli@v1.2
 
