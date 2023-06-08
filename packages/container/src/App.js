@@ -11,7 +11,7 @@ import MarketingApp from "./components/MarketingApp"
 
 // strategy for create prefix for scoped styles
 const generateClassName = createGenerateClassName({
-  productionPrefix: "ma",
+  productionPrefix: "co",
 })
 
 export default () => {
