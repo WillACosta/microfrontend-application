@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 import {
   StylesProvider,
@@ -7,9 +7,10 @@ import {
 } from "@material-ui/core/styles"
 
 import Header from "./components/Header"
+
+import AuthApp from "./components/AuthApp"
 import MarketingApp from "./components/MarketingApp"
 
-// strategy for create prefix for scoped styles
 const generateClassName = createGenerateClassName({
   productionPrefix: "co",
 })
@@ -20,7 +21,10 @@ export default () => {
       <StylesProvider generateClassName={generateClassName}>
         <>
           <Header />
-          <MarketingApp />
+          <Switch>
+            <Route path="/auth" component={AuthApp} />
+            <Route path="/" component={MarketingApp} />
+          </Switch>
         </>
       </StylesProvider>
     </BrowserRouter>
