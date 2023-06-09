@@ -33,3 +33,4 @@ The project has three sub-applications using the concept of micro frontend, more
 - Callback communication between apps
 - Lazy load app modules
 - React and Vue based applications
+- `React Router DOM` for handling browser and memory routers
