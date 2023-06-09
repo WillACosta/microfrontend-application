@@ -27,6 +27,9 @@ The project has three sub-applications using the concept of micro frontend, more
     |__ marketing
 ```
 
+We use a generic mount function for custom rendering micro apps to get agnostic behavior for any frameworks that going used
+down the road. Also, the communication between apps is made by the callbacks functions.
+
 ## Technical Resources
 
 - Micro-frontend architecture with mono-repo
