@@ -1,0 +1,59 @@
+name: Dashboard App Production Deploy CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/dashboard/**"
+
+defaults:
+  run:
+    working-directory: packages/dashboard
+
+jobs:
+  build:
+    name: Build App
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Prod Bundle
+        run: npm run build
+
+  deploy:
+    name: Deploy App to AWS S3
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Prod Bundle
+        run: npm run build
+
+      - name: Install AWS CLI
+        uses: shinyinc/action-aws-cli@v1.2
+
+      - name: Deploy to Amazon S3
+        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/dashboard/latest
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "us-east-2"
+
+      - name: Invalidate cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/dashboard/latest/remoteEntry.js"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: us-east-2
