@@ -1,8 +1,10 @@
-### @micro-frontend-application
+### @micro-frontend application
 
 A micro frontend applications to showcase Webpack 5 Module Federation plugin, and handle multiple modules with share dependencies.
 
-<br>
+<div style="text-align: center;">
+  <img src="docs/screenshot.png" width="700" alt="screenshot" style="margin-top: 35px"/>
+</div>
 
 ### Table of contents
 
