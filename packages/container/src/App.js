@@ -19,18 +19,26 @@ const generateClassName = createGenerateClassName({
 export default () => {
   const [isSignedIn, setIsSignedIn] = useState(false)
 
+  function handleSignOut() {
+    setIsSignedIn(false)
+  }
+
+  function handleSignIn() {
+    setIsSignedIn(true)
+  }
+
   return (
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassName}>
         <>
-          <Header isSignedIn={isSignedIn} />
+          <Header isSignedIn={isSignedIn} onSignOut={handleSignOut} />
           <Suspense fallback={<LoadingIndicator />}>
             <Switch>
               <Route path="/auth">
-                <AuthApp onSignIn={() => setIsSignedIn(true)} />
+                <AuthApp onSignIn={handleSignIn} />
               </Route>
               <Route path="/">
-                <MarketingApp onSignIn={() => setIsSignedIn(true)} />
+                <MarketingApp onSignIn={handleSignIn} />
               </Route>
             </Switch>
           </Suspense>
