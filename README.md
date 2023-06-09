@@ -1,6 +1,6 @@
 ### @micro-frontend application
 
-A micro frontend applications to showcase Webpack 5 Module Federation plugin, and handle multiple modules with share dependencies.
+A micro frontend application to showcase Webpack 5 Module Federation plugin, and handle multiple modules with share dependencies.
 
 <div style="text-align: center;">
   <img src="docs/screenshot.png" width="700" alt="screenshot" style="margin-top: 35px"/>
@@ -10,6 +10,7 @@ A micro frontend applications to showcase Webpack 5 Module Federation plugin, an
 
 - [App Architecture](#app-architecture)
 - [Technical Resources](#technical-resources)
+- [Getting Started](#getting-started)
 
 ## App Architecture
 
@@ -29,10 +30,30 @@ The project has three sub-applications using the concept of micro frontend, more
 ## Technical Resources
 
 - Micro-frontend architecture with mono-repo
-- `Github Actions` workflows for automatically deploy each MFE (Micro-frontend)
+- `Github Actions` workflows for automatically deploying each MFE (Micro-frontend)
 - Use of `Module Federation` plugin for managing applications
 - Use of `Amazon S3` and `Cloud Front` (CDN)
 - Callback communication between apps
 - Lazy load app modules
 - React and Vue based applications
 - `React Router DOM` for handling browser and memory routers
+
+## Getting Started
+
+1. First of all, you need to clone this repository:
+
+```shell
+git clone
+```
+
+2. Go to each application directory and install dependencies:
+
+```shell
+npm install
+```
+
+3. Finally, runs each one with:
+
+```shell
+npm run dev
+```
